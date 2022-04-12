@@ -19,8 +19,6 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFromFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
-  console.log(formFields);
-
   const resetFormFields = () => {
     setFormFields(defaultFromFields);
   };
@@ -44,9 +42,10 @@ const SignUpForm = () => {
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("email already in use");
-      } else {
-        console.log("user encountered error", error);
-      }
+      } 
+      // else {
+      //   // console.log("user encountered error", error);
+      // }
     }
   };
   const handleChange = (event) => {
@@ -61,7 +60,7 @@ const SignUpForm = () => {
       <span>Sign up with email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
-          lable="Display name"
+          label="Display name"
           type="text"
           required
           onChange={handleChange}
@@ -70,7 +69,7 @@ const SignUpForm = () => {
         />
 
         <FormInput
-          lable="email"
+          label="email"
           type="email"
           onChange={handleChange}
           name="email"
@@ -78,7 +77,7 @@ const SignUpForm = () => {
         />
 
         <FormInput
-          lable="Password"
+          label="Password"
           type="password"
           required
           onChange={handleChange}
@@ -87,7 +86,7 @@ const SignUpForm = () => {
         />
 
         <FormInput
-          lable="Confirm password"
+          label="Confirm password"
           type="password"
           required
           onChange={handleChange}

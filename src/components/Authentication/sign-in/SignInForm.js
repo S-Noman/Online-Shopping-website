@@ -1,4 +1,4 @@
-import { async } from "@firebase/util";
+// import { async } from "@firebase/util";
 import { useState } from "react";
 import {
   createUserDocumentFromAuth,
@@ -18,26 +18,24 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFromFields);
   const { email, password } = formFields;
 
-  //   console.log(formFields);
 
   const resetFormFields = () => {
     setFormFields(defaultFromFields);
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
+      const { user } = await signInAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log(response);
+
       resetFormFields();
     } catch (error) {
       switch (error.code) {
@@ -64,14 +62,14 @@ const SignInForm = () => {
       <span>Sign in with email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
-          lable="email"
+          label="email"
           type="email"
           onChange={handleChange}
           name="email"
           value={email}
         />
         <FormInput
-          lable="Password"
+          label="Password"
           type="password"
           required
           onChange={handleChange}
@@ -81,7 +79,7 @@ const SignInForm = () => {
         <div className="buttons-container">
           <Button type="submit">Sign in</Button>
           <Button type="button" buttonType="google" onClick={signInWithGoogle}>
-            Google sign in
+            Sign in with Google
           </Button>
         </div>
       </form>
