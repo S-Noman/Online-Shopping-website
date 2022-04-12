@@ -3,14 +3,8 @@ import NavBar from './components/NavBar/NavBar';
 import * as React from 'react';
 import Home from './components/routes/Home';
 import Authentication from './components/Authentication/Authentication';
+import Shop from './components/routes/Shop';
 
-const Shop =()=>{
-  return(
-    <div>
-      <h2>This is the shop</h2>
-    </div>
-  )
-}
 
 const App =()=> {
  return (
