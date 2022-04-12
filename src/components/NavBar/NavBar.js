@@ -25,10 +25,10 @@ const NavBar = () => {
             Shop
           </Link>
           {currentUser ? (
-            <span className="nav-link" onClick={signOutUser}> SIGN OUT </span>
+            <span className="nav-link" onClick={signOutUser}> Sign out </span>
           ) : (
             <Link className="nav-link" to="/auth">
-              SIGN IN
+              Sign in
             </Link>
           )}
           <CartIcon/>
