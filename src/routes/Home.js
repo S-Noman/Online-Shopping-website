@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Directory from '../directory/directory';
+import Directory from '../components/directory/Directory'; 
 
 const Home =()=> {
   const categories = [

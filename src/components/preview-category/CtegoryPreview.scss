@@ -1,0 +1,19 @@
+.category-preview-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+  
+    .category-title-preview {
+      font-size: 25px;
+      margin-bottom: 25px;
+      cursor: pointer;
+      font-family: 'Roboto Condensed';
+    }
+  
+    .preview {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 20px;
+    }
+  }
+  

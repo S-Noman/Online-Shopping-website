@@ -4,7 +4,7 @@ import App from "./App";
 import { UserProvider } from "./contexts/user.context";
 import "./index.scss";
 import { createRoot } from "react-dom/client";
-import { ProductProvider } from "./contexts/products.context";
+import { CategoriesProvider } from "./contexts/categories.context";
 import { CartProvider } from "./contexts/cart.context";
 
 //I added the following two lines and imported the above component:
@@ -16,11 +16,11 @@ const root = createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <UserProvider>
-      <ProductProvider>
+      <CategoriesProvider>
         <CartProvider>
           <App />
         </CartProvider>
-      </ProductProvider>
+      </CategoriesProvider>
     </UserProvider>
   </React.StrictMode>
 );

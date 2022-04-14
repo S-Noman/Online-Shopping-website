@@ -1,4 +1,3 @@
-import { async } from "@firebase/util";
 import { useState } from "react";
 import {
   createAuthUserWithEmailAndPassword,
@@ -6,7 +5,8 @@ import {
 } from "../../../utils/firebase/firebase.utils";
 import Button from "../../button/button";
 import FormInput from "../../form-input/FormInput";
-import './SignUpForm.scss';
+// import './SignUpForm.scss';
+import {SignUpFormContainer, SignUpFormTitle} from './SignUpForm-Style'
 
 const defaultFromFields = {
   displayName: "",
@@ -55,8 +55,8 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="sign-up-container">
-      <h2>Don't have an Account</h2>
+    <SignUpFormContainer>
+      <SignUpFormTitle>Don't have an Account</SignUpFormTitle>
       <span>Sign up with email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -95,7 +95,7 @@ const SignUpForm = () => {
         />
         <Button type="submit">Sign Up</Button>
       </form>
-    </div>
+    </SignUpFormContainer>
   );
 };
 export default SignUpForm;
