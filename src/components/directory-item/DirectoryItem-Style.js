@@ -6,6 +6,8 @@ export const BackgroundImage = styled.div`
   background-size: cover;
   background-position: center;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+ 
+  }
 `;
 
 export const Body = styled.div`
@@ -36,7 +38,7 @@ export const Body = styled.div`
 
 export const DirectoryContainer = styled.div`
   min-width: 30%;
-  height: 350px;
+  height: 400px;
   flex: 1 1 auto;
   display: flex;
   align-items: center;

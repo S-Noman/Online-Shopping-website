@@ -2,9 +2,10 @@ import "./ProductCard.scss";
 import Button , {BUTTON_TYPE_CLASSES} from "../button/button";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/cart.context";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
-  const { title, price, image } = product;
+  const { title, price, image , id} = product;
   const { addItemToCart } = useContext(CartContext);
   const addProductToCart = () => {
     addItemToCart(product);
@@ -19,6 +20,7 @@ const ProductCard = ({ product }) => {
       <Button buttonType={BUTTON_TYPE_CLASSES.inverted} onClick={addProductToCart}>
         Add to cart
       </Button>
+      
       {/* <Button buttonType="up" onClick={addProductToCart}>
         more
       </Button> */}

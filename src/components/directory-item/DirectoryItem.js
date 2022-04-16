@@ -4,7 +4,7 @@ import {
   Body,
   DirectoryContainer,
 } from "./DirectoryItem-Style";
-import { NavigationType, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const DirectoryItem = ({ category }) => {
   const { imageUrl, title , route} = category;
