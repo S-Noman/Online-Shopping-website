@@ -1,25 +1,29 @@
-import "./CheckOutItem.scss";
-import {CheckOutItemContainer, CheckOutItemImageContainer, CheckOutItemImage, CheckOutItemNamePrice ,RemoveItemIcon, Arrow , CartValue, CheckOutItemQuantity} from "./CheckOutItem-Style";
-import { useContext } from "react";
-import { CartContext } from "../../contexts/cart.context";
+
+import {
+  CheckOutItemContainer,
+  CheckOutItemImageContainer,
+  CheckOutItemImage,
+  CheckOutItemNamePrice,
+  RemoveItemIcon,
+  Arrow,
+  CartValue,
+  CheckOutItemQuantity,
+} from "./CheckOutItem-Style";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCartItems } from "../../redux/selectors/cartSelectors";
+import {addItemToCart, removeItemFromCart,clearItemFromCart } from '../../redux/actions/actions'
 
 const CheckOutItem = ({ cartItem }) => {
   const { title, image, price, quantity } = cartItem;
-  const { clearItemFromCart, addItemToCart, removeItemFromCart } =
-    useContext(CartContext);
+  const dispatch = useDispatch();
+  const cartItems = useSelector(selectCartItems);
 
-  const clearItemHandler = () => {
-    clearItemFromCart(cartItem);
-  };
+  const clearItemHandler = () =>
+    dispatch(clearItemFromCart(cartItems, cartItem));
+  const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
+  const removeItemHandler = () =>
+    dispatch(removeItemFromCart(cartItems, cartItem));
 
-  const addItemToCartHandler = () => {
-    addItemToCart(cartItem);
-  };
-
-  const removetemToCartHandler = () => {
-    removeItemFromCart(cartItem);
-  };
-  
   return (
     <CheckOutItemContainer>
       <CheckOutItemImageContainer>
@@ -27,18 +31,12 @@ const CheckOutItem = ({ cartItem }) => {
       </CheckOutItemImageContainer>
       <CheckOutItemNamePrice>{title}</CheckOutItemNamePrice>
       <CheckOutItemQuantity>
-        <Arrow onClick={removetemToCartHandler}>
-          &#10094;
-        </Arrow>
+        <Arrow onClick={removeItemHandler}>&#10094;</Arrow>
         <CartValue>{quantity}</CartValue>
-        <Arrow onClick={addItemToCartHandler}>
-          &#10095;
-        </Arrow>
+        <Arrow onClick={addItemHandler}>&#10095;</Arrow>
       </CheckOutItemQuantity>
       <CheckOutItemNamePrice>{`${price} x ${quantity}`}</CheckOutItemNamePrice>
-      <RemoveItemIcon onClick={clearItemHandler}>
-        &#10005;
-      </RemoveItemIcon>
+      <RemoveItemIcon onClick={clearItemHandler}>&#10005;</RemoveItemIcon>
     </CheckOutItemContainer>
   );
 };

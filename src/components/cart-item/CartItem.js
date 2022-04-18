@@ -1,4 +1,3 @@
-// import './CartItem.scss'
 import {CartItemContainer, CartItemImage, CartItemDetails, CartItemName} from './CartItem-Style'
 
 

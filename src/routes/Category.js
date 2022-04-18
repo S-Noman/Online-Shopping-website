@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./Category.scss";
+import "./Category-Style.js";
 import { useParams } from "react-router-dom";
 import ProductCard from "../components/product-card/ProductCard";
 import { useSelector } from "react-redux";
-import { selectCategories } from '../redux/selectors/selectors';
+import { selectCategories } from '../redux/selectors/categoriesSelector';
+import {CategoryContainer , CategoryTitle} from './Category-Style'
 
 
 const Category = () => {
@@ -18,13 +19,13 @@ const Category = () => {
 
   return (
     <>
-      <h2 className="category-title">{category.toUpperCase()}</h2>
-      <div className="category-container">
+      <CategoryTitle>{category.toUpperCase()}</CategoryTitle>
+      <CategoryContainer>
         {products &&
           products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
-      </div>
+      </CategoryContainer>
     </>
   );
 };

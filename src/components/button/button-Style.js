@@ -51,17 +51,3 @@ export const InvertedButton = styled(BaseButton)`
   }
 `;
 
-// &.up {
-//   background-color: white;
-//   color: black;
-//   border: 1px solid black;
-//   width: 10px;
-//   padding: 0 20px 0 20px;
-//   justify-content: end;
-
-//   &:hover {
-//     background-color: black;
-//     color: white;
-//     border: none;
-//   }
-// }

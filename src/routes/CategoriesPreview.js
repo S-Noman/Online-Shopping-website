@@ -1,6 +1,6 @@
 import CtegoryPreview from '../components/preview-category/CtegoryPreview'
 import { useSelector } from 'react-redux';
-import { selectCategories } from '../redux/selectors/selectors';
+import { selectCategories } from '../redux/selectors/categoriesSelector';
 
 const CategoriesPreview = () => {
 
@@ -20,12 +20,3 @@ const CategoriesPreview = () => {
 
 export default CategoriesPreview;
 
-
-/* <Fragment key={category}>
-          <h2 className="category-title">{category}</h2>
-          <div className="products-container">
-            {categoriesMap[category].map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </Fragment> */

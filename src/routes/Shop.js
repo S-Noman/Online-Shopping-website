@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import "./ShopStyle.scss";
 import CategoriesPreview from './CategoriesPreview'
 import Category from "./Category";
 import {getCategoriesAndDocuments} from '../utils/firebase/firebase.utils'

@@ -1,20 +1,15 @@
 import styled from 'styled-components'
 
-
-
 export const CartItemContainer = styled.div`
 width: 100%;
 display: flex;
 height: 80px;
 margin-bottom: 15px;
-
 `;
 
 export const CartItemImage = styled.img`
 width: 30%;
 object-fit: contain;
-
-
 `;
 
 export const CartItemDetails = styled.div`
@@ -28,7 +23,6 @@ padding: 10px 20px;
 
 export const CartItemName = styled.span`
   font-size: 16px;
-
 `
 
 

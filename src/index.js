@@ -3,9 +3,8 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.scss";
 import { createRoot } from "react-dom/client";
-import { CartProvider } from "./contexts/cart.context";
 import { Provider } from "react-redux";
-import {store} from './redux/store'
+import { store } from "./redux/store";
 
 //I added the following two lines and imported the above component:
 const rootElement = document.getElementById("root");
@@ -16,9 +15,7 @@ const root = createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-          <CartProvider>
-            <App />
-          </CartProvider>
+      <App />
     </Provider>
   </React.StrictMode>
 );

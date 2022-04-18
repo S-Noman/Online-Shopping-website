@@ -1,4 +1,3 @@
-import "./DirectoryItem.scss";
 import {
   BackgroundImage,
   Body,
