@@ -6,7 +6,7 @@ display: grid;
 grid-template-columns: repeat(4, 1fr);
 column-gap: 20px;
 row-gap: 50px;
-padding-right: 40px ;
+padding-right: 50px ;
 padding-left: 40px ;
 `
 export const CategoryTitle = styled.h2`

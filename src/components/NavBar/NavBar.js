@@ -6,7 +6,7 @@ import CartIcon from "../cart-icon/CartIcon";
 import { useSelector } from "react-redux";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import CartDropdown from "../cart-dropdown/CartDropdown";
-import {selectCurrentUser} from '../../redux/selectors/selectors'
+import {selectCurrentUser} from '../../redux/selectors/userSelectors'
 import { selectIsCartOpen } from '../../redux/selectors/cartSelectors'
 
 

@@ -1,12 +1,12 @@
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button";
-import './ProductCard.scss'
+import "./ProductCard.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../../redux/actions/actions";
 import { selectCartItems } from "../../redux/selectors/cartSelectors";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
-  const cartItems = useSelector(selectCartItems)
+  const cartItems = useSelector(selectCartItems);
   const { title, price, image } = product;
   const addProductToCart = () => {
     dispatch(addItemToCart(cartItems, product));
@@ -25,10 +25,6 @@ const ProductCard = ({ product }) => {
       >
         Add to cart
       </Button>
-
-      {/* <Button buttonType="up" onClick={addProductToCart}>
-        more
-      </Button> */}
     </div>
   );
 };

@@ -24,7 +24,7 @@ export const CheckOutBlock = styled.div`
     width: 8%;
   }
 `;
-export const CheckOutTotal = styled.div`
+export const CheckOutTotal = styled.span`
   margin-top: 30px;
   margin-left: auto;
   font-size: 36px;
